@@ -1075,3 +1075,6 @@ ul.bulleted li {
 
 .disabled, .down {opacity: .5; filter: alpha(opacity=50);}
 .offline, .unreachable, .incompatible {color: #e85252;}
+
+svg text.index { color: #dfdfdf; }
+svg text.label { font-size: 10px; text-shadow: none; }

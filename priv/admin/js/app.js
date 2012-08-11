@@ -56,5 +56,5 @@ minispade.register('app', function() {
   minispade.require('snapshot');
   minispade.require('cluster');
   minispade.require('ring');
-
+  minispade.require('visualization');
 });

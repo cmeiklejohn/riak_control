@@ -17,6 +17,8 @@ minispade.register('router', function() {
 
       showRing: Ember.Route.transitionTo('ring.index'),
 
+      showVisualization: Ember.Route.transitionTo('visualization.index'),
+
       index: Ember.Route.extend({
         route: '/',
         redirectsTo: 'snapshot.index'
@@ -145,6 +147,27 @@ minispade.register('router', function() {
             }
           })
         })
+      }),
+
+      visualization: Ember.Route.extend({
+        route: 'visualization',
+
+        connectOutlets: function(router) {
+          router.get('applicationController').connectOutlet('visualization');
+          $.riakControl.markNavActive('nav-visualization');
+        },
+
+        index: Ember.Route.extend({
+          route: '/'
+        }),
+
+        enter: function(router) {
+          router.get('visualizationController').startInterval();
+        },
+
+        exit: function(router) {
+          router.get('visualizationController').cancelInterval();
+        }
       })
     })
   });
