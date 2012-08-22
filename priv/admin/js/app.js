@@ -57,4 +57,5 @@ minispade.register('app', function() {
   minispade.require('cluster');
   minispade.require('ring');
   minispade.require('visualization');
+
 });
